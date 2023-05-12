@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -34,7 +34,7 @@ Jobs = [
 # the below is aka empty route that means the it is the home page
 @app.route("/")
 def hello_world():
-    return Flask.render_template('home.html',jobs = Jobs,company="PSD Industries")
+    return render_template('home.html',jobs = Jobs,company="PSD Industries")
 
 @app.route("/api/jobs")
 def job_list():
