@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask
 
 app = Flask(__name__)
 
@@ -34,8 +34,11 @@ Jobs = [
 # the below is aka empty route that means the it is the home page
 @app.route("/")
 def hello_world():
-    return render_template('home.html',jobs = Jobs,company="PSD Industries")
+    return Flask.render_template('home.html',jobs = Jobs,company="PSD Industries")
 
+@app.route("/api/jobs")
+def job_list():
+    return Flask.jsonify(Jobs)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
