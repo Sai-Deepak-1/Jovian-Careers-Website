@@ -38,6 +38,7 @@ def hello_world():
 
 @app.route("/api/jobs")
 def job_list():
+    #jsonify is a function in flask which gives us json as an output 
     return Flask.jsonify(Jobs)
 
 if __name__ == "__main__":

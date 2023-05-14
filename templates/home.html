@@ -44,7 +44,15 @@
         <img class = "img-fluid" src = "static/career.jpg"></br>
         
         <h2>About SCS :P</h2><hr>
-        <p class = "lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed faucibus turpis in eu mi. Lobortis scelerisque fermentum dui faucibus in ornare. Tellus id interdum velit laoreet id. Mattis rhoncus urna neque viverra. Venenatis a condimentum vitae sapien pellentesque. Sit amet nisl suscipit adipiscing bibendum est ultricies. Viverra tellus in hac habitasse platea dictumst vestibulum rhoncus. Orci sagittis eu volutpat odio facilisis mauris sit amet massa. Ipsum a arcu cursus vitae congue mauris rhoncus aenean. Quis auctor elit sed vulputate mi sit amet. Porta nibh venenatis cras sed felis eget velit aliquet.</p>
+        <div class = "row">
+            <div class = "col-md-6">
+                <p class = "lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed faucibus turpis in eu mi. Lobortis scelerisque fermentum dui faucibus in ornare. Tellus id interdum velit laoreet id.</p>
+            </div>
+            <div class="d-none d-md-block col-md-6">
+                <img class="img-fluid" src = "static/meeting.jpg">
+            </div>
+                
+        </div>
         <h2>Open Positions</h2>
         <hr>
         <p class = "ptext">JOBS AVAILABLE </p>
@@ -54,9 +62,10 @@
             {% endfor %}
         </p>
         <div style="text-align : center;">
-            <button class = "btn btn-primary btn-lg">Contact Us</button>
+           <a href = "mailto:helloxyz123@gmail.com?subject=Question%20Regarding%20Job%20A&body=My%20Name%20%3A%20%3CYour%20Name%20Here%3E%0D%0A%0D%0AMy%20Question%20%3A%20%3CYour%20Question%3E" type = " button" class="btn btn-outline-secondary float-right align-middle">Contact Us</a>
             <p class = "mt-4"></p>
         </div>
+        
     </div>
     {% include 'footer.html' %}
 </body>
