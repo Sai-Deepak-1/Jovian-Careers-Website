@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jobs</title>
-</head>
-<body>
-    <div class = "border-bottom row" style="padding-bottom : 4px; margin-bottom:16px;">
-        <div class = "col-10">
-            <h4 style="margin-bottom:4px;">{{job['title']}}</h4>
-        
-            <div>
-                <b>Location : </b>{{job['location']}}
-            </div>
-        
-           {% if 'ssalary in job' %}
-                <div>
-                    <b>Salary : </b>{{job['salary']}}
-                </div>
-            {% endif %}
+  </head>
+  <body>
+    <div
+      class="border-bottom row"
+      style="padding-bottom: 4px; margin-bottom: 16px"
+    >
+      <div class="col-10">
+        <h4 style="margin-bottom: 4px">{{job['title']}}</h4>
+
+        <div><b>Location : </b>{{job['location']}}</div>
+
+        {% if 'ssalary in job' %}
+        <div><b>Salary : </b>{{job['salary']}}</div>
+        {% endif %}
+      </div>
+      <div class="col-2">
+        <div>
+          <a
+            href="mailto:helloxyz123@gmail.com?subject=Job%20Application%20for%20{{job['title']}}&body=My%20Name%20%3A%20%3CYour%20name%20here%3E%0D%0AMy%20Resume%20Link%3A%20%3CYour%20Resume%20Link%20here%3E%0D%0AMy%20LinkedIn%20Link%20%3A%20%3CYour%20LinkedIn%20Link%20here%3E"
+            type=" button"
+            class="btn btn-outline-secondary float-right align-middle"
+            >Apply</a
+          >
         </div>
-        <div class="col-2">
-            <div><a href = "mailto:helloxyz123@gmail.com?subject=Job%20Application%20for%20{{job['title']}}&body=My%20Name%20%3A%20%3CYour%20name%20here%3E%0D%0AMy%20Resume%20Link%3A%20%3CYour%20Resume%20Link%20here%3E%0D%0AMy%20LinkedIn%20Link%20%3A%20%3CYour%20LinkedIn%20Link%20here%3E" type = " button" class="btn btn-outline-secondary float-right align-middle">Apply</a></div>
-           </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
