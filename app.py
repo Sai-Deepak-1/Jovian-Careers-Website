@@ -34,10 +34,11 @@ def hello_world():
     jobs = load_jobs()
     return render_template('home.html', jobs=jobs, company="Sai Industries")
 
+
 # @app.route("/jobs/<id>")
 # def jobid(id):
 #     job = load_jobs(id)
-    
+
 
 @app.route("/api/jobs")
 def job_list():
