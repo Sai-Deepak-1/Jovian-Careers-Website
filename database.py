@@ -20,3 +20,14 @@ def load_jobs():
         for row in res.all():
             jobs.append(row._asdict())
         return jobs
+
+
+def load_job(id):
+    with engine.connect() as con:
+        res = con.execute(text("select * from jobs where id = :val"),
+                          {"val": id})
+        row = res.all()
+        if len(row) == 0:
+            return None
+        else:
+            return row[0]._asdict()

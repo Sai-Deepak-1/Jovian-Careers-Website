@@ -1,5 +1,5 @@
-from flask import Flask, render_template
-from database import load_jobs
+from flask import Flask, render_template, jsonify
+from database import load_jobs, load_job
 
 app = Flask(__name__)
 
@@ -35,16 +35,20 @@ def hello_world():
     return render_template('home.html', jobs=jobs, company="Sai Industries")
 
 
-# @app.route("/jobs/<id>")
-# def jobid(id):
-#     job = load_jobs(id)
+@app.route("/jobs/<id>")
+def jobid(id):
+    job = load_job(id)
+    # return jsonify(job)
+    if not job:
+        return 'Not Found', 404
+    return render_template('jobfile.html', job=job, company="Sai Industries")
 
 
 @app.route("/api/jobs")
 def job_list():
     #jsonify is a function in flask which gives us json as an output
     jobs = load_jobs()
-    return Flask.jsonify(jobs)
+    return jsonify(jobs)
 
 
 if __name__ == "__main__":
