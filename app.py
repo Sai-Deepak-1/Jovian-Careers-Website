@@ -1,5 +1,5 @@
 from flask import Flask, render_template, jsonify, request
-from database import load_jobs, load_job
+from database import load_jobs, load_job, add_application_to_db
 
 app = Flask(__name__)
 
@@ -50,11 +50,13 @@ def job_list():
     jobs = load_jobs()
     return jsonify(jobs)
 
-@app.route("/job/<id>/apply" , methods = ['post'])
+@app.route("/job/<id>/apply", methods=['post'])
 def apply_to_job(id):
-    data = request.form
-    # u can store this in db / send an email
-    return jsonify(data)
-    
+  data = request.form
+  job = load_job(id)
+  add_application_to_db(id, data)
+  return render_template('applicationSubmitted.html', application=data,job=job)
+
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
