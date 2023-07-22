@@ -31,8 +31,11 @@
         </ol>
         <h4>Salary :</h4>
         <p>{{job.currency}} {{job.salary}}</p>
+        <!-- <div class="d-grid gap-2 col-6 mx-auto">
+            <a class="btn btn-primary" href="templates/applicationForm.html" role="button">Apply for This Job</a>
+        </div> -->
+        {%include 'applicationForm.html'%}
     </div>
-    
     {% include 'footer.html' %}
 </body>
 </html>
